@@ -1,0 +1,41 @@
+% BaseConocimientos2.pl: diagnostico automotriz
+% Dominio: fallas de un automovil. Cada hecho va en una sola linea.
+% conocimiento(Falla, ListaDeSintomas)  -> usado por experto.pl
+% prevencion(Falla, Texto)              -> como evitar la falla
+% tratamiento(Falla, Texto)             -> como repararla o corregirla
+
+% ---------- SINTOMAS (conocimiento/2) ----------
+conocimiento('motor sobrecalentado', ['el nivel de refrigerante es bajo', 'hay vapor saliendo del motor', 'el medidor de temperatura está en rojo', 'el ventilador no funciona', 'hay olor a quemado']).
+conocimiento('banda del alternador defectuosa', ['la banda tiene grietas', 'la banda está cristalizada', 'la banda está floja', 'la banda hace ruido al arrancar', 'la banda presenta desgaste irregular']).
+conocimiento('batería defectuosa', ['las luces y el ventilador están encendidos', 'el motor está apagado', 'el voltaje de la batería es menor a 10.5V', 'hay dificultad para arrancar', 'los bornes están sulfatados']).
+conocimiento('sistema de frenos defectuoso', ['el pedal del freno está duro', 'al frenar se produce un tirón lateral', 'las ruedas rechinan al frenar', 'hay pérdida de líquido de frenos', 'el freno responde tarde']).
+conocimiento('transmisión defectuosa', ['hay cambios de marcha bruscos', 'el vehículo no acelera', 'hay ruidos extraños en la caja de cambios', 'hay vibraciones al conducir', 'hay pérdida de respuesta']).
+conocimiento('sensor de oxígeno defectuoso', ['hay aumento en el consumo de combustible', 'hay fallos en la aceleración', 'hay humo negro en el escape', 'la luz de revisión está encendida', 'el ralentí es inestable']).
+conocimiento('bomba de combustible defectuosa', ['el motor no enciende', 'hay pérdida de potencia', 'hay ruido extraño en el tanque de combustible', 'hay tirones al acelerar', 'hay fallos intermitentes del motor']).
+conocimiento('sistema de suspensión defectuoso', ['el vehículo rebota mucho', 'hay ruido metálico al pasar por baches', 'hay desgaste irregular de llantas', 'el volante vibra', 'hay inestabilidad en curvas']).
+conocimiento('radiador obstruido', ['hay sobrecalentamiento frecuente', 'hay fugas de refrigerante', 'hay olor a quemado bajo el capó', 'hay presión alta en el radiador', 'el ventilador funciona constantemente']).
+conocimiento('catalizador obstruido', ['hay pérdida de potencia', 'hay olores fuertes en el escape', 'hay aumento en emisiones de CO2', 'hay fallos en la aceleración', 'hay temperatura elevada en el escape']).
+
+% ---------- PREVENCION (prevencion/2) ----------
+prevencion('motor sobrecalentado', 'Revisar con el motor frío el nivel de refrigerante y usar la mezcla recomendada por el fabricante, comúnmente 50 por ciento de refrigerante y 50 por ciento de agua destilada. Inspeccionar mangueras, tapón del radiador y ventilador en cada servicio y cambiar el refrigerante según el manual del vehículo.').
+prevencion('banda del alternador defectuosa', 'Inspeccionar la banda en cada servicio buscando grietas, cristalización, desgaste y tensión correcta. Evitar derrames de aceite o refrigerante sobre ella y reemplazarla según el intervalo indicado por el fabricante.').
+prevencion('batería defectuosa', 'Mantener los bornes limpios y apretados, y protegerlos con grasa dieléctrica. Revisar periódicamente el voltaje de la batería y el sistema de carga, evitar dejar luces o accesorios encendidos con el motor apagado y reemplazar la batería al terminar su vida útil.').
+prevencion('sistema de frenos defectuoso', 'Revisar en cada servicio balatas o pastillas, discos, tambores y el nivel y estado del líquido de frenos. Cambiar el líquido según el manual del fabricante y atender de inmediato ruidos, pedal duro o vibraciones al frenar.').
+prevencion('transmisión defectuosa', 'Revisar el nivel y el estado del aceite de la transmisión y cambiarlo según el manual. Evitar arranques bruscos y exceso de carga o remolque, atender fugas y ruidos de inmediato y mantener en buen estado el sistema de enfriamiento.').
+prevencion('sensor de oxígeno defectuoso', 'Usar combustible de buena calidad y mantener la afinación del motor, con bujías y filtros en buen estado. Corregir fugas de aceite o refrigerante que contaminen el sensor y reemplazarlo según el intervalo del fabricante.').
+prevencion('bomba de combustible defectuosa', 'Evitar circular con el tanque casi vacío, porque el combustible enfría y lubrica la bomba. Cambiar el filtro de combustible según el manual, usar combustible de calidad y mantener limpio el tanque.').
+prevencion('sistema de suspensión defectuoso', 'Revisar amortiguadores, resortes, rótulas, terminales y bujes en cada servicio. Alinear y balancear las llantas, mantener su presión correcta, evitar baches y no exceder la carga del vehículo.').
+prevencion('radiador obstruido', 'Cambiar el refrigerante y enjuagar el sistema de enfriamiento según el manual, usando agua destilada en la mezcla. Mantener limpio el panal del radiador por fuera y revisar mangueras y tapón.').
+prevencion('catalizador obstruido', 'Mantener el motor afinado, con bujías, inyectores y sensores en buen estado, para evitar mezcla rica y fallas de encendido. Atender la luz de revisión, corregir el consumo anormal de aceite o refrigerante y usar combustible de calidad.').
+
+% ---------- TRATAMIENTO O REPARACION (tratamiento/2) ----------
+tratamiento('motor sobrecalentado', 'Detener el vehículo en un lugar seguro, apagar el motor y no abrir el tapón del radiador en caliente. Dejar enfriar, rellenar el refrigerante y buscar la fuga. Reparar o reemplazar la pieza dañada, como termostato, bomba de agua, manguera, relevador, ventilador o tapón, y purgar el aire del sistema.').
+tratamiento('banda del alternador defectuosa', 'Reemplazar la banda por una del tipo y la longitud indicados por el fabricante. Revisar poleas, tensor y rodamientos, ajustar la tensión y comprobar que el alternador cargue correctamente después del cambio.').
+tratamiento('batería defectuosa', 'Limpiar los bornes sulfatados con una mezcla de bicarbonato de sodio y agua, y apretarlos bien. Recargar la batería con un cargador adecuado y probar el voltaje y el sistema de carga. Si no mantiene la carga, reemplazarla.').
+tratamiento('sistema de frenos defectuoso', 'Dejar de usar el vehículo si hay pérdida de líquido o el freno responde tarde. Localizar fugas en líneas, mangueras, cilindros o pinzas, reemplazar pastillas, balatas, discos o tambores desgastados, purgar el sistema con el líquido especificado y revisar el servofreno si el pedal está duro.').
+tratamiento('transmisión defectuosa', 'Verificar el nivel y el estado del aceite y leer los códigos de falla con un escáner. Corregir fugas, cambiar aceite y filtro, y reparar o reemplazar solenoides, sensores o módulo de control. Si hay desgaste interno, acudir a un taller especializado en transmisiones.').
+tratamiento('sensor de oxígeno defectuoso', 'Leer los códigos de falla con un escáner OBD-II y comprobar el sensor. Reemplazar el sensor de oxígeno defectuoso, revisar cableado y conectores, y corregir la causa de fondo, como fugas de escape o mezcla incorrecta, antes de borrar los códigos.').
+tratamiento('bomba de combustible defectuosa', 'Revisar fusible y relevador, y medir la presión de combustible con un manómetro. Cambiar el filtro si está tapado y reemplazar la bomba si no entrega la presión especificada. Trabajar sin chispas ni flamas por riesgo de incendio.').
+tratamiento('sistema de suspensión defectuoso', 'Inspeccionar la suspensión con el vehículo elevado. Reemplazar por pares, en el mismo eje, los amortiguadores desgastados, junto con bujes, rótulas o terminales con juego, y después realizar la alineación y el balanceo.').
+tratamiento('radiador obstruido', 'Hacer una prueba de presión y un lavado del sistema de enfriamiento. Limpiar o destapar el radiador con el procedimiento adecuado y, si el panal está tapado o con fugas, repararlo o reemplazarlo. Renovar refrigerante, tapón y termostato si es necesario.').
+tratamiento('catalizador obstruido', 'Diagnosticar y corregir primero la causa, como fallas de encendido, mezcla rica o consumo de aceite o refrigerante. Medir la contrapresión del escape y, si el catalizador está obstruido o dañado, reemplazarlo por uno compatible y verificar los sensores de oxígeno.').
